@@ -24,19 +24,19 @@ You can set up the timer with the URL query parameter.
 12 minutes timer
 
 ```
-https://timer.polyomino.jp/?time=12
+https://eva-timer-with-sound.glitch.me/?time=12
 ```
 
 stopwatch mode
 
 ```
-https://timer.polyomino.jp/?stopwatch
+ https://eva-timer-with-sound.glitch.me/?stopwatch
 ```
 
 You can also set up the remaining minutes by using the setup button.
 Each click will increase by 1 minute.
 
-## Author
+## Original Author
 
 [Hagi](https://github.com/iPolyomino)
 
@@ -44,3 +44,9 @@ Each click will increase by 1 minute.
 
 - https://torinak.com/7segment
 - https://fonts.google.com/
+
+
+
+## Special thanks
+- https://github.com/iPolyomino/EVA-TIMER
+- https://www.youtube.com/watch?v=o1Eo3VW693Q
