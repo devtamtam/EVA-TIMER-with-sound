@@ -74,4 +74,107 @@
     </div>
     <script src="index.js"></script>
   </body>
+  
+  
+  
+  
+  
+  
+
+<head>
+  <style>
+    /* ボタンスタイル */
+    .control-btn {
+      padding: 0px 0px;
+      background: #4285f4;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    /* 最小化プレーヤー */
+    .mini-player {
+      width: 0px;
+      height: 0px;
+      position: fixed;
+      bottom: 80px;
+      left: 20px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      overflow: hidden;
+      opacity: 0.3;
+      transition: all 0.3s;
+    }
+
+    .mini-player:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <!-- コントロールボタン -->
+  <button class="control-btn" onclick="togglePlay()"></button>
+
+  <!-- 最小化プレーヤー -->
+  <div id="player" class="mini-player"></div>
+
+  <script>
+    let player;
+    let isPlaying = false;
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        videoId: 'o1Eo3VW693Q',
+        playerVars: {
+          'autoplay': 0,
+          'controls': 0,
+          'rel': 0,
+          'fs': 0
+        }
+      });
+    }
+
+    function togglePlay() {
+      const btn = document.querySelector('.control-btn');
+      if (!isPlaying) {
+        player.playVideo();
+       // btn.textContent = '⏸ 一時停止';
+        document.getElementById('player').style.opacity = '1';
+      } else {
+        player.pauseVideo();
+       // btn.textContent = '▶ 再生';
+        document.getElementById('player').style.opacity = '0.3';
+      }
+      isPlaying = !isPlaying;
+    }
+
+    // キーボードショートカット（スペースキー）
+    document.addEventListener('keydown', (e) => {
+      if (e.code === 'Space') {
+        e.preventDefault();
+        togglePlay();
+      }
+    });
+
+    // API読み込み
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(tag);
+  </script>
+</body>
+
+  
+  
+  
+  
+  
+  
+  
 </html>
