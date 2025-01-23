@@ -4,6 +4,12 @@ timer
 
 ![screenshot](./screenshot.png)
 
+## 🎉 Latest Updates 
+
+- **New Music Integration**  
+ - play "DECISVEBATTLE" when starting the timer
+
+
 ## Usage
 
 You can set up the timer with the URL query parameter.
